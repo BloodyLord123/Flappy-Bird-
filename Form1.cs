@@ -55,9 +55,32 @@ namespace Flappy_Bird
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            UpdateGame();
+        }
+
+        private void UpdateGame()
+        {
+            MoveObjects();
+            CheckCollisions();
+            UpdateScore();
+        }
+
+        private void MoveObjects()
+        {
             playerBird.Fall();
             pipe.Move();
+        }
 
+        private void CheckCollisions()
+        {
+            if (pipe.CheckCollision(playerBird) || playerBird.GameDefeat())
+            {
+                EndGame();
+            }
+        }
+
+        private void UpdateScore()
+        {
             if (playerBird.CheckCollision(Scoreline))
             {
                 scorechek++;
@@ -65,27 +88,32 @@ namespace Flappy_Bird
                 {
                     score++;
                     Score.Text = "Score: " + score;
-                    if (score > bestScore)
-                    {
-                        bestScore = score;
-                        Best.Text = "Best: " + bestScore;
-                        scoreManager.SaveBestScore(bestScore);
-                    }
+                    UpdateBestScore();
                 }
             }
+        }
 
-            if (pipe.CheckCollision(playerBird) || playerBird.GameDefeat())
+        private void UpdateBestScore()
+        {
+            if (score > bestScore)
             {
-                pipe.GameStop();
-                playerBird.GameStop();
-                timer1.Tick -= timer1_Tick;
-                timer1.Stop();
-                buttonstart.Visible = true;
-                score = 0;
-                Score.Text = "Score: 0 ";
-                buttonmenu.Visible = false;
+                bestScore = score;
+                Best.Text = "Best: " + bestScore;
+                scoreManager.SaveBestScore(bestScore);
             }
         }
+
+        private void EndGame()
+        {
+            pipe.GameStop();
+            playerBird.GameStop();
+            timer1.Stop();
+            buttonstart.Visible = true;
+            score = 0;
+            Score.Text = "Score: 0 ";
+            buttonmenu.Visible = false;
+        }
+
 
         private void buttonstart_Click(object sender, EventArgs e)
         {
