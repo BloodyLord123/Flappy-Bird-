@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -20,7 +21,7 @@ namespace Flappy_Bird
         private int score;
         public int scorechek;
         private int bestScore = 0;
-        private const string FilePath = "C:\\VSC22 Project\\source\\repos\\Flappy Bird\\best_score.txt";
+        private static readonly string FilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "best_score.txt");
         private ScoreManager scoreManager;
         public Form1()
         {
