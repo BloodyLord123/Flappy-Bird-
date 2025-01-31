@@ -1,0 +1,6 @@
+C:\VSC22 Project\source\repos\Flappy Bird\FlappyBirdLibrary\obj\Debug\FlappyBirdLibrary.csproj.AssemblyReference.cache
+C:\VSC22 Project\source\repos\Flappy Bird\FlappyBirdLibrary\obj\Debug\FlappyBirdLibrary.csproj.CoreCompileInputs.cache
+C:\VSC22 Project\source\repos\Flappy Bird\FlappyBirdLibrary\bin\Debug\FlappyBirdLibrary.dll
+C:\VSC22 Project\source\repos\Flappy Bird\FlappyBirdLibrary\bin\Debug\FlappyBirdLibrary.pdb
+C:\VSC22 Project\source\repos\Flappy Bird\FlappyBirdLibrary\obj\Debug\FlappyBirdLibrary.dll
+C:\VSC22 Project\source\repos\Flappy Bird\FlappyBirdLibrary\obj\Debug\FlappyBirdLibrary.pdb
