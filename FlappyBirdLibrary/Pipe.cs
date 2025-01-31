@@ -52,23 +52,16 @@ namespace FlappyBirdLibrary
         public bool CheckCollision(PlayerBird playerBird)
         {
             Rectangle birdBounds = new Rectangle(playerBird.BirdBox.Location, playerBird.BirdBox.Size);
-            Rectangle pipeDownBounds = new Rectangle(PipeDownBox.Location, PipeDownBox.Size);
-            Rectangle pipeUpBounds = new Rectangle(PipeUpBox.Location, PipeUpBox.Size);
 
-            bool intersects = birdBounds.Left < pipeDownBounds.Right &&
-                      birdBounds.Right > pipeDownBounds.Left &&
-                      birdBounds.Top < pipeDownBounds.Bottom &&
-                      birdBounds.Bottom > pipeDownBounds.Top;
-
-            if (!intersects)
+            foreach (var pipeBounds in new[] { PipeDownBox.Bounds, PipeUpBox.Bounds })
             {
-                intersects = birdBounds.Left < pipeUpBounds.Right &&
-                             birdBounds.Right > pipeUpBounds.Left &&
-                             birdBounds.Top < pipeUpBounds.Bottom &&
-                             birdBounds.Bottom > pipeUpBounds.Top;
+                if (birdBounds.IntersectsWith(pipeBounds))
+                {
+                    return true;
+                }
             }
 
-            return intersects;
+            return false;
         }
     }
 }

@@ -11,3 +11,16 @@ C:\VSC22 Project\source\repos\Flappy Bird\Flappy Bird\obj\Debug\Flappy Bird.pdb
 C:\VSC22 Project\source\repos\Flappy Bird\Flappy Bird\bin\Debug\FlappyBirdLibrary.dll
 C:\VSC22 Project\source\repos\Flappy Bird\Flappy Bird\bin\Debug\FlappyBirdLibrary.pdb
 C:\VSC22 Project\source\repos\Flappy Bird\Flappy Bird\obj\Debug\Flappy Bird.csproj.CopyComplete
+D:\Ref\Flappy Bird\bin\Debug\Flappy Bird.exe.config
+D:\Ref\Flappy Bird\bin\Debug\Flappy Bird.exe
+D:\Ref\Flappy Bird\bin\Debug\Flappy Bird.pdb
+D:\Ref\Flappy Bird\bin\Debug\FlappyBirdLibrary.dll
+D:\Ref\Flappy Bird\bin\Debug\FlappyBirdLibrary.pdb
+D:\Ref\Flappy Bird\obj\Debug\Flappy Bird.csproj.AssemblyReference.cache
+D:\Ref\Flappy Bird\obj\Debug\Flappy_Bird.Form1.resources
+D:\Ref\Flappy Bird\obj\Debug\Flappy_Bird.Properties.Resources.resources
+D:\Ref\Flappy Bird\obj\Debug\Flappy Bird.csproj.GenerateResource.cache
+D:\Ref\Flappy Bird\obj\Debug\Flappy Bird.csproj.CoreCompileInputs.cache
+D:\Ref\Flappy Bird\obj\Debug\Flappy Bird.csproj.CopyComplete
+D:\Ref\Flappy Bird\obj\Debug\Flappy Bird.exe
+D:\Ref\Flappy Bird\obj\Debug\Flappy Bird.pdb
