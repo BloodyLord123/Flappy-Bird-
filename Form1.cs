@@ -48,10 +48,7 @@ namespace Flappy_Bird
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                playerBird.Jump();
-            }
+            BirdJump(e);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -74,34 +71,17 @@ namespace Flappy_Bird
 
         private void CheckCollisions()
         {
-            if (pipe.CheckCollision(playerBird) || playerBird.GameDefeat())
-            {
-                EndGame();
-            }
+            TriggerGameOver();
         }
 
         private void UpdateScore()
         {
-            if (playerBird.CheckCollision(Scoreline))
-            {
-                scorechek++;
-                if (scorechek % 28 == 0)
-                {
-                    score++;
-                    Score.Text = "Score: " + score;
-                    UpdateBestScore();
-                }
-            }
+            CheckAndUpdateScore();
         }
 
         private void UpdateBestScore()
         {
-            if (score > bestScore)
-            {
-                bestScore = score;
-                Best.Text = "Best: " + bestScore;
-                scoreManager.SaveBestScore(bestScore);
-            }
+            CheckAndUpdateBestScore();
         }
 
         private void EndGame()
@@ -119,19 +99,10 @@ namespace Flappy_Bird
         private void buttonstart_Click(object sender, EventArgs e)
         {
             InitializeGame();
-            playerBird.GameStart();
-            pipe.ResetPosition();
-            pipe.GameStart();
-            FlappyBox1.Visible = false;
-            Best.Visible = true;
-            Score.Visible = true;
-            buttonstart.Visible = false;
-            buttonmenu.Visible = true;
-            picturepipedown.Visible = true;
-            picturepipeup.Visible = true;
-            pictureBird.Location = new Point(190, 230);
-            score = 0;
-            Score.Text = "Score: 0 ";
+            ResetGameObjects();
+            ShowGameUI();
+            ResetPlayerPosition();
+            ResetScore();
         }
 
         private void buttonmenu_Click(object sender, EventArgs e)
@@ -148,9 +119,73 @@ namespace Flappy_Bird
             buttoncontinue.Visible = false;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void BirdJump(MouseEventArgs e)
         {
+            if (e.Button == MouseButtons.Left)
+            {
+                playerBird.Jump();
+            }
+        }
 
+        private void TriggerGameOver()
+        {
+            if (pipe.CheckCollision(playerBird) || playerBird.GameDefeat())
+            {
+                EndGame();
+            }
+        }
+
+        private void CheckAndUpdateScore()
+        {
+            if (playerBird.CheckCollision(Scoreline))
+            {
+                scorechek++;
+                if (scorechek % 28 == 0)
+                {
+                    score++;
+                    Score.Text = "Score: " + score;
+                    UpdateBestScore();
+                }
+            }
+        }
+
+        private void CheckAndUpdateBestScore()
+        {
+            if (score > bestScore)
+            {
+                bestScore = score;
+                Best.Text = "Best: " + bestScore;
+                scoreManager.SaveBestScore(bestScore);
+            }
+        }
+
+        private void ResetScore()
+        {
+            score = 0;
+            Score.Text = "Score: 0 ";
+        }
+
+        private void ResetPlayerPosition()
+        {
+            pictureBird.Location = new Point(190, 230);
+        }
+
+        private void ShowGameUI()
+        {
+            FlappyBox1.Visible = false;
+            Best.Visible = true;
+            Score.Visible = true;
+            buttonstart.Visible = false;
+            buttonmenu.Visible = true;
+            picturepipedown.Visible = true;
+            picturepipeup.Visible = true;
+        }
+
+        private void ResetGameObjects()
+        {
+            playerBird.GameStart();
+            pipe.ResetPosition();
+            pipe.GameStart();
         }
     }
 }

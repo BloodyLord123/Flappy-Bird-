@@ -1,0 +1,13 @@
+C:\Users\ipz23\Flappy-Bird-\Flappy Bird\bin\Debug\Flappy Bird.exe.config
+C:\Users\ipz23\Flappy-Bird-\Flappy Bird\bin\Debug\Flappy Bird.exe
+C:\Users\ipz23\Flappy-Bird-\Flappy Bird\bin\Debug\Flappy Bird.pdb
+C:\Users\ipz23\Flappy-Bird-\Flappy Bird\bin\Debug\FlappyBirdLibrary.dll
+C:\Users\ipz23\Flappy-Bird-\Flappy Bird\bin\Debug\FlappyBirdLibrary.pdb
+C:\Users\ipz23\Flappy-Bird-\Flappy Bird\obj\Debug\Flappy Bird.csproj.AssemblyReference.cache
+C:\Users\ipz23\Flappy-Bird-\Flappy Bird\obj\Debug\Flappy_Bird.Form1.resources
+C:\Users\ipz23\Flappy-Bird-\Flappy Bird\obj\Debug\Flappy_Bird.Properties.Resources.resources
+C:\Users\ipz23\Flappy-Bird-\Flappy Bird\obj\Debug\Flappy Bird.csproj.GenerateResource.cache
+C:\Users\ipz23\Flappy-Bird-\Flappy Bird\obj\Debug\Flappy Bird.csproj.CoreCompileInputs.cache
+C:\Users\ipz23\Flappy-Bird-\Flappy Bird\obj\Debug\Flappy B.473E4A0B.Up2Date
+C:\Users\ipz23\Flappy-Bird-\Flappy Bird\obj\Debug\Flappy Bird.exe
+C:\Users\ipz23\Flappy-Bird-\Flappy Bird\obj\Debug\Flappy Bird.pdb

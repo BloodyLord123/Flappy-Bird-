@@ -10,3 +10,9 @@ D:\Ref\FlappyBirdLibrary\obj\Debug\FlappyBirdLibrary.csproj.AssemblyReference.ca
 D:\Ref\FlappyBirdLibrary\obj\Debug\FlappyBirdLibrary.csproj.CoreCompileInputs.cache
 D:\Ref\FlappyBirdLibrary\obj\Debug\FlappyBirdLibrary.dll
 D:\Ref\FlappyBirdLibrary\obj\Debug\FlappyBirdLibrary.pdb
+C:\Users\ipz23\Flappy-Bird-\FlappyBirdLibrary\bin\Debug\FlappyBirdLibrary.dll
+C:\Users\ipz23\Flappy-Bird-\FlappyBirdLibrary\bin\Debug\FlappyBirdLibrary.pdb
+C:\Users\ipz23\Flappy-Bird-\FlappyBirdLibrary\obj\Debug\FlappyBirdLibrary.csproj.AssemblyReference.cache
+C:\Users\ipz23\Flappy-Bird-\FlappyBirdLibrary\obj\Debug\FlappyBirdLibrary.csproj.CoreCompileInputs.cache
+C:\Users\ipz23\Flappy-Bird-\FlappyBirdLibrary\obj\Debug\FlappyBirdLibrary.dll
+C:\Users\ipz23\Flappy-Bird-\FlappyBirdLibrary\obj\Debug\FlappyBirdLibrary.pdb

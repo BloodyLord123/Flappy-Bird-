@@ -25,11 +25,16 @@ namespace FlappyBirdLibrary
         {
             if (File.Exists(filePath))
             {
-                string bestScoreText = File.ReadAllText(filePath);
-                int.TryParse(bestScoreText, out int bestScore);
-                return bestScore;
+                return GetBestScore();
             }
             return 0;
+        }
+
+        private int GetBestScore()
+        {
+            string bestScoreText = File.ReadAllText(filePath);
+            int.TryParse(bestScoreText, out int bestScore);
+            return bestScore;
         }
     }
 }
