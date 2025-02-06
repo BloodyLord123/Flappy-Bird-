@@ -20,50 +20,36 @@ namespace FlappyBirdLibrary
 
         public void Fall()
         {
-            if (GameActive)
-            {
-                Speed += Gravity;
-                if (Speed > MaxFallSpeed)
-                {
-                    Speed = MaxFallSpeed;
-                }
-                MoveBird();
-            }
+            CheckActivityGame();
         }
+
         public void Jump()
         {
-            if (GameActive)
-            {
-                Speed = JumpHeight;
-                MoveBird();
-            }
+            MakeBirdJump();
         }
+
         private void MoveBird()
         {
             BirdBox.Top += Speed;
             CheckBounds();
         }
+
         private void CheckBounds()
         {
-            if (BirdBox.Top < 0)
-            {
-                BirdBox.Top = 0;
-            }
-            if (BirdBox.Top + BirdBox.Height > BirdBox.Parent.ClientSize.Height)
-            {
-                BirdBox.Top = BirdBox.Parent.ClientSize.Height - BirdBox.Height;
-            }
+            LimitBirdPosition();
         }
+
         public bool GameDefeat()
         {
-            if (BirdBox.Top + BirdBox.Height >= BirdBox.Parent.ClientSize.Height)
-            {
-                GameStop();
-                return true;
-            }
-            return false;
+            return CheckGroundCollision();
         }
+
         public bool CheckCollision(PictureBox scoreline)
+        {
+            return CheckScorelineCross(scoreline);
+        }
+
+        private bool CheckScorelineCross(PictureBox scoreline)
         {
             if (GameActive)
             {
@@ -76,6 +62,50 @@ namespace FlappyBirdLibrary
                            birdBounds.Bottom > scorelineBounds.Top;
 
                 return intersects;
+            }
+            return false;
+        }
+
+        private void CheckActivityGame()
+        {
+            if (GameActive)
+            {
+                Speed += Gravity;
+                if (Speed > MaxFallSpeed)
+                {
+                    Speed = MaxFallSpeed;
+                }
+                MoveBird();
+            }
+        }
+
+        private void MakeBirdJump()
+        {
+            if (GameActive)
+            {
+                Speed = JumpHeight;
+                MoveBird();
+            }
+        }
+
+        private void LimitBirdPosition()
+        {
+            if (BirdBox.Top < 0)
+            {
+                BirdBox.Top = 0;
+            }
+            if (BirdBox.Top + BirdBox.Height > BirdBox.Parent.ClientSize.Height)
+            {
+                BirdBox.Top = BirdBox.Parent.ClientSize.Height - BirdBox.Height;
+            }
+        }
+
+        private bool CheckGroundCollision()
+        {
+            if (BirdBox.Top + BirdBox.Height >= BirdBox.Parent.ClientSize.Height)
+            {
+                GameStop();
+                return true;
             }
             return false;
         }

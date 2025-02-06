@@ -25,19 +25,39 @@ namespace FlappyBirdLibrary
         {
             if (GameActive)
             {
-                PipeDownBox.Left -= PipeSpeed;
-                PipeUpBox.Left -= PipeSpeed;
-                ScoreBox.Left -= PipeSpeed;
-
-                if (PipeDownBox.Right < 0)
-                {
-                    ResetPosition();
-                }
+                MovePipes();
+                CheckPipeReset();
                 return true;
             }
             return false;
         }
+
         public void ResetPosition()
+        {
+            PipePositionAndView();
+        }
+
+        public bool CheckCollision(PlayerBird playerBird)
+        {
+            return CheckPipeCollision(playerBird);
+        }
+
+        private void CheckPipeReset()
+        {
+            if (PipeDownBox.Right < 0)
+            {
+                ResetPosition();
+            }
+        }
+
+        private void MovePipes()
+        {
+            PipeDownBox.Left -= PipeSpeed;
+            PipeUpBox.Left -= PipeSpeed;
+            ScoreBox.Left -= PipeSpeed;
+        }
+
+        private void PipePositionAndView()
         {
             PipeDownBox.Left = PipeDownBox.Parent.ClientSize.Width;
             PipeUpBox.Left = PipeDownBox.Left;
@@ -49,7 +69,8 @@ namespace FlappyBirdLibrary
             PipeUpBox.Top = newY - PipeUpBox.Height;
             ScoreBox.Left = PipeDownBox.Left + PipeDownBox.Width / 2 - ScoreBox.Width / 2;
         }
-        public bool CheckCollision(PlayerBird playerBird)
+
+        private bool CheckPipeCollision(PlayerBird playerBird)
         {
             Rectangle birdBounds = new Rectangle(playerBird.BirdBox.Location, playerBird.BirdBox.Size);
 
