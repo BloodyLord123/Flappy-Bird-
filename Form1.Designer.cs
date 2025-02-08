@@ -187,7 +187,6 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Form1";
             this.Text = "FlappyBird";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.picturepipedown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturepipeup)).EndInit();

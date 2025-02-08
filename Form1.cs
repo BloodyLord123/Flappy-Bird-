@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using FlappyBirdLibrary;
 
@@ -15,14 +8,14 @@ namespace Flappy_Bird
 {   
     public partial class Form1 : Form
     {
-        
         private PlayerBird playerBird;
         private Pipe pipe;
         private int score;
-        public int scorechek;
+        public int scoreCheckCounter;
         private int bestScore = 0;
         private static readonly string FilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "best_score.txt");
         private ScoreManager scoreManager;
+
         public Form1()
         {
             InitializeComponent();
@@ -84,8 +77,8 @@ namespace Flappy_Bird
         {
             if (playerBird.CheckCollision(Scoreline))
             {
-                scorechek++;
-                if (scorechek % 28 == 0)
+                scoreCheckCounter++;
+                if (scoreCheckCounter % 28 == 0)
                 {
                     score++;
                     Score.Text = "Score: " + score;
@@ -115,8 +108,7 @@ namespace Flappy_Bird
             buttonmenu.Visible = false;
         }
 
-
-        private void buttonstart_Click(object sender, EventArgs e)
+        private void StartGame()
         {
             InitializeGame();
             playerBird.GameStart();
@@ -134,11 +126,21 @@ namespace Flappy_Bird
             Score.Text = "Score: 0 ";
         }
 
-        private void buttonmenu_Click(object sender, EventArgs e)
+        private void StopGame()
         {
             playerBird.GameStop();
             pipe.GameStop();
             buttoncontinue.Visible = true;
+        }
+
+        private void buttonstart_Click(object sender, EventArgs e)
+        {
+            StartGame();
+        }
+
+        private void buttonmenu_Click(object sender, EventArgs e)
+        {
+            StopGame();
         }
 
         private void buttoncontinue_Click(object sender, EventArgs e)
@@ -146,11 +148,6 @@ namespace Flappy_Bird
             playerBird.GameStart();
             pipe.GameStart();
             buttoncontinue.Visible = false;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
